@@ -1,0 +1,7 @@
+[2026-03-13T14:29:46.999+0000] {processor.py:186} INFO - Started process (PID=50) to work on /opt/airflow/dags/ETL_postgresql_dag/etl_postgresql.py
+[2026-03-13T14:29:47.012+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/ETL_postgresql_dag/etl_postgresql.py for tasks to queue
+[2026-03-13T14:29:47.083+0000] {logging_mixin.py:190} INFO - [2026-03-13T14:29:47.067+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/ETL_postgresql_dag/etl_postgresql.py
+[2026-03-13T14:29:47.388+0000] {processor.py:925} INFO - DAG(s) 'ELT_postgresql' retrieved from /opt/airflow/dags/ETL_postgresql_dag/etl_postgresql.py
+[2026-03-13T14:29:47.714+0000] {logging_mixin.py:190} INFO - [2026-03-13T14:29:47.713+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-03-13T14:29:48.080+0000] {logging_mixin.py:190} INFO - [2026-03-13T14:29:48.078+0000] {dag.py:4180} INFO - Setting next_dagrun for ELT_postgresql to 2026-03-13 00:00:00+00:00, run_after=2026-03-14 00:00:00+00:00
+[2026-03-13T14:29:48.236+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/ETL_postgresql_dag/etl_postgresql.py took 1.325 seconds

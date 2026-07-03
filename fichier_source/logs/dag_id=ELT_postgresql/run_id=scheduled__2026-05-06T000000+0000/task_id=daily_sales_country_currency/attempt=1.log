@@ -1,0 +1,22 @@
+[2026-05-07T18:16:22.568+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-05-07T18:16:22.682+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT_postgresql.daily_sales_country_currency scheduled__2026-05-06T00:00:00+00:00 [queued]>
+[2026-05-07T18:16:22.742+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT_postgresql.daily_sales_country_currency scheduled__2026-05-06T00:00:00+00:00 [queued]>
+[2026-05-07T18:16:22.747+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-05-07T18:16:22.854+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): daily_sales_country_currency> on 2026-05-06 00:00:00+00:00
+[2026-05-07T18:16:22.920+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=85) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-05-07T18:16:22.929+0000] {standard_task_runner.py:72} INFO - Started process 117 to run task
+[2026-05-07T18:16:22.936+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ELT_postgresql', 'daily_sales_country_currency', 'scheduled__2026-05-06T00:00:00+00:00', '--job-id', '188', '--raw', '--subdir', 'DAGS_FOLDER/ETL_postgresql_dag/etl_postgresql.py', '--cfg-path', '/tmp/tmpxppkhprq']
+[2026-05-07T18:16:22.943+0000] {standard_task_runner.py:105} INFO - Job 188: Subtask daily_sales_country_currency
+[2026-05-07T18:16:23.200+0000] {task_command.py:467} INFO - Running <TaskInstance: ELT_postgresql.daily_sales_country_currency scheduled__2026-05-06T00:00:00+00:00 [running]> on host 11702db3a8b2
+[2026-05-07T18:16:24.887+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bereket Tafesse' AIRFLOW_CTX_DAG_ID='ELT_postgresql' AIRFLOW_CTX_TASK_ID='daily_sales_country_currency' AIRFLOW_CTX_EXECUTION_DATE='2026-05-06T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-05-06T00:00:00+00:00'
+[2026-05-07T18:16:24.894+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2026-05-07T18:16:24.898+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2026-05-07T18:16:24.900+0000] {logging_mixin.py:190} INFO - Current task name:daily_sales_country_currency state:running start_date:2026-05-07 18:16:22.684787+00:00
+[2026-05-07T18:16:24.902+0000] {logging_mixin.py:190} INFO - Dag name:ELT_postgresql and current dag run status:running
+[2026-05-07T18:16:24.905+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-05-07T18:16:24.965+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-05-07T18:16:24.976+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/dags/ETL_postgresql_dag/python_tasks/daily_sales_country_currency.py']
+[2026-05-07T18:16:25.130+0000] {subprocess.py:99} INFO - Output:
+[2026-05-07T18:18:42.804+0000] {job.py:229} INFO - Heartbeat recovered after 140.64 seconds

@@ -1,0 +1,47 @@
+[2026-01-20T15:50:04.125+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-01-20T15:50:04.246+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT_postgresql.store_sales_summary manual__2026-01-20T15:49:37.989073+00:00 [queued]>
+[2026-01-20T15:50:04.287+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT_postgresql.store_sales_summary manual__2026-01-20T15:49:37.989073+00:00 [queued]>
+[2026-01-20T15:50:04.290+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-01-20T15:50:04.383+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): store_sales_summary> on 2026-01-20 15:49:37.989073+00:00
+[2026-01-20T15:50:04.414+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=93) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-01-20T15:50:04.421+0000] {standard_task_runner.py:72} INFO - Started process 103 to run task
+[2026-01-20T15:50:04.426+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ELT_postgresql', 'store_sales_summary', 'manual__2026-01-20T15:49:37.989073+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/ETL_postgresql_dag/etl_postgresql.py', '--cfg-path', '/tmp/tmp4o16ulk2']
+[2026-01-20T15:50:04.432+0000] {standard_task_runner.py:105} INFO - Job 17: Subtask store_sales_summary
+[2026-01-20T15:50:04.691+0000] {task_command.py:467} INFO - Running <TaskInstance: ELT_postgresql.store_sales_summary manual__2026-01-20T15:49:37.989073+00:00 [running]> on host 8f44a6806547
+[2026-01-20T15:50:05.130+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bereket Tafesse' AIRFLOW_CTX_DAG_ID='ELT_postgresql' AIRFLOW_CTX_TASK_ID='store_sales_summary' AIRFLOW_CTX_EXECUTION_DATE='2026-01-20T15:49:37.989073+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-20T15:49:37.989073+00:00'
+[2026-01-20T15:50:05.139+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2026-01-20T15:50:05.147+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2026-01-20T15:50:05.155+0000] {logging_mixin.py:190} INFO - Current task name:store_sales_summary state:running start_date:2026-01-20 15:50:04.248928+00:00
+[2026-01-20T15:50:05.157+0000] {logging_mixin.py:190} INFO - Dag name:ELT_postgresql and current dag run status:running
+[2026-01-20T15:50:05.161+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-01-20T15:50:05.167+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-01-20T15:50:05.174+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/dags/ETL_postgresql_dag/python_tasks/store_sales_summary.py']
+[2026-01-20T15:50:05.237+0000] {subprocess.py:99} INFO - Output:
+[2026-01-20T15:50:16.966+0000] {subprocess.py:106} INFO - [2026-01-20T15:50:16.960+0000] {base.py:84} INFO - Retrieving connection 'postgresql_connection'
+[2026-01-20T15:50:16.998+0000] {subprocess.py:106} INFO - [2026-01-20T15:50:16.996+0000] {sql.py:511} INFO - Running statement:
+[2026-01-20T15:50:17.002+0000] {subprocess.py:106} INFO -         DROP TABLE IF EXISTS store_sales_summary;
+[2026-01-20T15:50:17.011+0000] {subprocess.py:106} INFO - 
+[2026-01-20T15:50:17.023+0000] {subprocess.py:106} INFO -         CREATE TABLE store_sales_summary AS
+[2026-01-20T15:50:17.025+0000] {subprocess.py:106} INFO -         SELECT
+[2026-01-20T15:50:17.029+0000] {subprocess.py:106} INFO -             store_id,
+[2026-01-20T15:50:17.034+0000] {subprocess.py:106} INFO -             store_name,
+[2026-01-20T15:50:17.037+0000] {subprocess.py:106} INFO -             store_country,
+[2026-01-20T15:50:17.039+0000] {subprocess.py:106} INFO -             store_city,
+[2026-01-20T15:50:17.043+0000] {subprocess.py:106} INFO -             store_type,
+[2026-01-20T15:50:17.047+0000] {subprocess.py:106} INFO -             SUM(total_amount) AS total_sales_amount,
+[2026-01-20T15:50:17.050+0000] {subprocess.py:106} INFO -             SUM(total_quantity_sold) AS total_quantity_sold
+[2026-01-20T15:50:17.060+0000] {subprocess.py:106} INFO -         FROM exploded_products
+[2026-01-20T15:50:17.063+0000] {subprocess.py:106} INFO -         GROUP BY store_id, store_name, store_country, store_city, store_type;
+[2026-01-20T15:50:17.067+0000] {subprocess.py:106} INFO -     , parameters: None
+[2026-01-20T15:50:17.128+0000] {subprocess.py:106} INFO - [2026-01-20T15:50:17.126+0000] {sql.py:520} INFO - Rows affected: 0
+[2026-01-20T15:50:18.764+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2026-01-20T15:50:18.951+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-01-20T15:50:18.958+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=ELT_postgresql, task_id=store_sales_summary, run_id=manual__2026-01-20T15:49:37.989073+00:00, execution_date=20260120T154937, start_date=20260120T155004, end_date=20260120T155018
+[2026-01-20T15:50:19.045+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2026-01-20T15:50:19.047+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2026-01-20T15:50:19.048+0000] {logging_mixin.py:190} INFO - Dag name:ELT_postgresql queued_at:2026-01-20 15:49:38.083121+00:00
+[2026-01-20T15:50:19.050+0000] {logging_mixin.py:190} INFO - Task hostname:8f44a6806547 operator:BashOperator
+[2026-01-20T15:50:19.103+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-01-20T15:50:19.133+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

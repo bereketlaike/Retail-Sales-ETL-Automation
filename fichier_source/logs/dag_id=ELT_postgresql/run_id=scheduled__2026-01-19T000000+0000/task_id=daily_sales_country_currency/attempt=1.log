@@ -1,0 +1,246 @@
+[2026-01-20T14:44:54.829+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-01-20T14:44:54.933+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT_postgresql.daily_sales_country_currency scheduled__2026-01-19T00:00:00+00:00 [queued]>
+[2026-01-20T14:44:54.971+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT_postgresql.daily_sales_country_currency scheduled__2026-01-19T00:00:00+00:00 [queued]>
+[2026-01-20T14:44:54.973+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-01-20T14:44:55.032+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): daily_sales_country_currency> on 2026-01-19 00:00:00+00:00
+[2026-01-20T14:44:55.091+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=107) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-01-20T14:44:55.103+0000] {standard_task_runner.py:72} INFO - Started process 123 to run task
+[2026-01-20T14:44:55.116+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ELT_postgresql', 'daily_sales_country_currency', 'scheduled__2026-01-19T00:00:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/ETL_postgresql_dag/etl_postgresql.py', '--cfg-path', '/tmp/tmprm3w_wbr']
+[2026-01-20T14:44:55.123+0000] {standard_task_runner.py:105} INFO - Job 12: Subtask daily_sales_country_currency
+[2026-01-20T14:44:55.574+0000] {task_command.py:467} INFO - Running <TaskInstance: ELT_postgresql.daily_sales_country_currency scheduled__2026-01-19T00:00:00+00:00 [running]> on host ad5114d9f8bb
+[2026-01-20T14:44:56.153+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bereket Tafesse' AIRFLOW_CTX_DAG_ID='ELT_postgresql' AIRFLOW_CTX_TASK_ID='daily_sales_country_currency' AIRFLOW_CTX_EXECUTION_DATE='2026-01-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-19T00:00:00+00:00'
+[2026-01-20T14:44:56.167+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2026-01-20T14:44:56.169+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2026-01-20T14:44:56.172+0000] {logging_mixin.py:190} INFO - Current task name:daily_sales_country_currency state:running start_date:2026-01-20 14:44:54.935514+00:00
+[2026-01-20T14:44:56.174+0000] {logging_mixin.py:190} INFO - Dag name:ELT_postgresql and current dag run status:running
+[2026-01-20T14:44:56.176+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-01-20T14:44:56.196+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-01-20T14:44:56.211+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/dags/ETL_postgresql_dag/python_tasks/daily_sales_country_currency.py']
+[2026-01-20T14:44:56.286+0000] {subprocess.py:99} INFO - Output:
+[2026-01-20T14:45:08.118+0000] {subprocess.py:106} INFO - Traceback (most recent call last):
+[2026-01-20T14:45:08.121+0000] {subprocess.py:106} INFO -   File "/opt/***/dags/ETL_postgresql_dag/python_tasks/daily_sales_country_currency.py", line 22, in <module>
+[2026-01-20T14:45:08.130+0000] {subprocess.py:106} INFO -     staging_daily_sales_country_currency()
+[2026-01-20T14:45:08.132+0000] {subprocess.py:106} INFO -   File "/opt/***/dags/ETL_postgresql_dag/python_tasks/daily_sales_country_currency.py", line 6, in staging_daily_sales_country_currency
+[2026-01-20T14:45:08.143+0000] {subprocess.py:106} INFO -     postgres_hook.run("""
+[2026-01-20T14:45:08.145+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/***/providers/common/sql/hooks/sql.py", line 463, in run
+[2026-01-20T14:45:08.147+0000] {subprocess.py:106} INFO -     with self._create_autocommit_connection(autocommit) as conn:
+[2026-01-20T14:45:08.149+0000] {subprocess.py:106} INFO -          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-01-20T14:45:08.151+0000] {subprocess.py:106} INFO -   File "/usr/local/lib/python3.12/contextlib.py", line 137, in __enter__
+[2026-01-20T14:45:08.153+0000] {subprocess.py:106} INFO -     return next(self.gen)
+[2026-01-20T14:45:08.155+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^
+[2026-01-20T14:45:08.157+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/***/providers/common/sql/hooks/sql.py", line 576, in _create_autocommit_connection
+[2026-01-20T14:45:08.159+0000] {subprocess.py:106} INFO -     with closing(self.get_conn()) as conn:
+[2026-01-20T14:45:08.160+0000] {subprocess.py:106} INFO -                  ^^^^^^^^^^^^^^^
+[2026-01-20T14:45:08.162+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/***/providers/postgres/hooks/postgres.py", line 141, in get_conn
+[2026-01-20T14:45:08.164+0000] {subprocess.py:106} INFO -     conn = deepcopy(self.connection)
+[2026-01-20T14:45:08.166+0000] {subprocess.py:106} INFO -                     ^^^^^^^^^^^^^^^
+[2026-01-20T14:45:08.168+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/***/providers/common/sql/hooks/sql.py", line 180, in connection
+[2026-01-20T14:45:08.170+0000] {subprocess.py:106} INFO -     self._connection = self.get_connection(self.get_conn_id())
+[2026-01-20T14:45:08.172+0000] {subprocess.py:106} INFO -                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-01-20T14:45:08.174+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/***/hooks/base.py", line 83, in get_connection
+[2026-01-20T14:45:08.176+0000] {subprocess.py:106} INFO -     conn = Connection.get_connection_from_secrets(conn_id)
+[2026-01-20T14:45:08.178+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-01-20T14:45:08.180+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/***/models/connection.py", line 537, in get_connection_from_secrets
+[2026-01-20T14:45:08.182+0000] {subprocess.py:106} INFO -     raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+[2026-01-20T14:45:08.184+0000] {subprocess.py:106} INFO - ***.exceptions.AirflowNotFoundException: The conn_id `postgresql_connection` isn't defined
+[2026-01-20T14:45:09.067+0000] {subprocess.py:110} INFO - Command exited with return code 1
+[2026-01-20T14:45:09.109+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-01-20T14:45:09.127+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2026-01-20T14:45:09.129+0000] {logging_mixin.py:190} INFO - Task start:2026-01-20 14:44:54.935514+00:00 end:2026-01-20 14:45:09.124179+00:00 duration:14.188665
+[2026-01-20T14:45:09.131+0000] {logging_mixin.py:190} INFO - Task:<Task(BashOperator): daily_sales_country_currency> dag:<DAG: ELT_postgresql> dagrun:<DagRun ELT_postgresql @ 2026-01-19 00:00:00+00:00: scheduled__2026-01-19T00:00:00+00:00, state:running, queued_at: 2026-01-20 14:44:35.688029+00:00. externally triggered: False>
+[2026-01-20T14:45:09.134+0000] {logging_mixin.py:190} INFO - Failure caused by Bash command failed. The command returned a non-zero exit code 1.
+[2026-01-20T14:45:09.137+0000] {taskinstance.py:1226} INFO - Marking task as FAILED. dag_id=ELT_postgresql, task_id=daily_sales_country_currency, run_id=scheduled__2026-01-19T00:00:00+00:00, execution_date=20260119T000000, start_date=20260120T144454, end_date=20260120T144509
+[2026-01-20T14:45:09.225+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-01-20T14:45:09.228+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 12 for task daily_sales_country_currency (Bash command failed. The command returned a non-zero exit code 1.; 123)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-01-20T14:45:09.273+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2026-01-20T14:45:09.357+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-01-20T14:45:09.370+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2026-01-20T15:22:06.669+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-01-20T15:22:06.804+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT_postgresql.daily_sales_country_currency scheduled__2026-01-19T00:00:00+00:00 [queued]>
+[2026-01-20T15:22:06.855+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT_postgresql.daily_sales_country_currency scheduled__2026-01-19T00:00:00+00:00 [queued]>
+[2026-01-20T15:22:06.858+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-01-20T15:22:06.939+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): daily_sales_country_currency> on 2026-01-19 00:00:00+00:00
+[2026-01-20T15:22:06.972+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=224) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-01-20T15:22:06.979+0000] {standard_task_runner.py:72} INFO - Started process 238 to run task
+[2026-01-20T15:22:06.984+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ELT_postgresql', 'daily_sales_country_currency', 'scheduled__2026-01-19T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/ETL_postgresql_dag/etl_postgresql.py', '--cfg-path', '/tmp/tmpragh_bia']
+[2026-01-20T15:22:06.990+0000] {standard_task_runner.py:105} INFO - Job 5: Subtask daily_sales_country_currency
+[2026-01-20T15:22:07.398+0000] {task_command.py:467} INFO - Running <TaskInstance: ELT_postgresql.daily_sales_country_currency scheduled__2026-01-19T00:00:00+00:00 [running]> on host 9de7224434ec
+[2026-01-20T15:22:08.010+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bereket Tafesse' AIRFLOW_CTX_DAG_ID='ELT_postgresql' AIRFLOW_CTX_TASK_ID='daily_sales_country_currency' AIRFLOW_CTX_EXECUTION_DATE='2026-01-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-01-19T00:00:00+00:00'
+[2026-01-20T15:22:08.032+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2026-01-20T15:22:08.034+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2026-01-20T15:22:08.037+0000] {logging_mixin.py:190} INFO - Current task name:daily_sales_country_currency state:running start_date:2026-01-20 15:22:06.806657+00:00
+[2026-01-20T15:22:08.039+0000] {logging_mixin.py:190} INFO - Dag name:ELT_postgresql and current dag run status:running
+[2026-01-20T15:22:08.041+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-01-20T15:22:08.052+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-01-20T15:22:08.057+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/dags/ETL_postgresql_dag/python_tasks/daily_sales_country_currency.py']
+[2026-01-20T15:22:08.111+0000] {subprocess.py:99} INFO - Output:
+[2026-01-20T15:22:25.370+0000] {subprocess.py:106} INFO - Traceback (most recent call last):
+[2026-01-20T15:22:25.383+0000] {subprocess.py:106} INFO -   File "/opt/***/dags/ETL_postgresql_dag/python_tasks/daily_sales_country_currency.py", line 22, in <module>
+[2026-01-20T15:22:25.398+0000] {subprocess.py:106} INFO -     staging_daily_sales_country_currency()
+[2026-01-20T15:22:25.408+0000] {subprocess.py:106} INFO -   File "/opt/***/dags/ETL_postgresql_dag/python_tasks/daily_sales_country_currency.py", line 6, in staging_daily_sales_country_currency
+[2026-01-20T15:22:25.415+0000] {subprocess.py:106} INFO -     postgres_hook.run("""
+[2026-01-20T15:22:25.425+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/***/providers/common/sql/hooks/sql.py", line 463, in run
+[2026-01-20T15:22:25.432+0000] {subprocess.py:106} INFO -     with self._create_autocommit_connection(autocommit) as conn:
+[2026-01-20T15:22:25.435+0000] {subprocess.py:106} INFO -          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-01-20T15:22:25.438+0000] {subprocess.py:106} INFO -   File "/usr/local/lib/python3.12/contextlib.py", line 137, in __enter__
+[2026-01-20T15:22:25.440+0000] {subprocess.py:106} INFO -     return next(self.gen)
+[2026-01-20T15:22:25.443+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^
+[2026-01-20T15:22:25.454+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/***/providers/common/sql/hooks/sql.py", line 576, in _create_autocommit_connection
+[2026-01-20T15:22:25.457+0000] {subprocess.py:106} INFO -     with closing(self.get_conn()) as conn:
+[2026-01-20T15:22:25.460+0000] {subprocess.py:106} INFO -                  ^^^^^^^^^^^^^^^
+[2026-01-20T15:22:25.463+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/***/providers/postgres/hooks/postgres.py", line 141, in get_conn
+[2026-01-20T15:22:25.466+0000] {subprocess.py:106} INFO -     conn = deepcopy(self.connection)
+[2026-01-20T15:22:25.469+0000] {subprocess.py:106} INFO -                     ^^^^^^^^^^^^^^^
+[2026-01-20T15:22:25.480+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/***/providers/common/sql/hooks/sql.py", line 180, in connection
+[2026-01-20T15:22:25.488+0000] {subprocess.py:106} INFO -     self._connection = self.get_connection(self.get_conn_id())
+[2026-01-20T15:22:25.491+0000] {subprocess.py:106} INFO -                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-01-20T15:22:25.500+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/***/hooks/base.py", line 83, in get_connection
+[2026-01-20T15:22:25.507+0000] {subprocess.py:106} INFO -     conn = Connection.get_connection_from_secrets(conn_id)
+[2026-01-20T15:22:25.515+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-01-20T15:22:25.518+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/***/models/connection.py", line 537, in get_connection_from_secrets
+[2026-01-20T15:22:25.557+0000] {subprocess.py:106} INFO -     raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+[2026-01-20T15:22:25.561+0000] {subprocess.py:106} INFO - ***.exceptions.AirflowNotFoundException: The conn_id `postgresql_connection` isn't defined
+[2026-01-20T15:22:27.258+0000] {subprocess.py:110} INFO - Command exited with return code 1
+[2026-01-20T15:22:27.327+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-01-20T15:22:27.354+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2026-01-20T15:22:27.357+0000] {logging_mixin.py:190} INFO - Task start:2026-01-20 15:22:06.806657+00:00 end:2026-01-20 15:22:27.351315+00:00 duration:20.544658
+[2026-01-20T15:22:27.360+0000] {logging_mixin.py:190} INFO - Task:<Task(BashOperator): daily_sales_country_currency> dag:<DAG: ELT_postgresql> dagrun:<DagRun ELT_postgresql @ 2026-01-19 00:00:00+00:00: scheduled__2026-01-19T00:00:00+00:00, state:running, queued_at: 2026-01-20 15:21:43.312612+00:00. externally triggered: False>
+[2026-01-20T15:22:27.362+0000] {logging_mixin.py:190} INFO - Failure caused by Bash command failed. The command returned a non-zero exit code 1.
+[2026-01-20T15:22:27.365+0000] {taskinstance.py:1226} INFO - Marking task as FAILED. dag_id=ELT_postgresql, task_id=daily_sales_country_currency, run_id=scheduled__2026-01-19T00:00:00+00:00, execution_date=20260119T000000, start_date=20260120T152206, end_date=20260120T152227
+[2026-01-20T15:22:27.552+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-01-20T15:22:27.555+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 5 for task daily_sales_country_currency (Bash command failed. The command returned a non-zero exit code 1.; 238)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-01-20T15:22:27.644+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2026-01-20T15:22:27.825+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-01-20T15:22:27.843+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

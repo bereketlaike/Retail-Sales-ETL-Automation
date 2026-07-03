@@ -1,0 +1,28 @@
+[2026-05-07T18:10:08.803+0000] {processor.py:186} INFO - Started process (PID=66) to work on /opt/airflow/dags/ETL_json_postgresql_dag/etl_json_postgresql.py
+[2026-05-07T18:10:08.819+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/ETL_json_postgresql_dag/etl_json_postgresql.py for tasks to queue
+[2026-05-07T18:10:08.873+0000] {logging_mixin.py:190} INFO - [2026-05-07T18:10:08.861+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/ETL_json_postgresql_dag/etl_json_postgresql.py
+[2026-05-07T18:10:09.321+0000] {processor.py:925} INFO - DAG(s) 'ETL_json_postgresql' retrieved from /opt/airflow/dags/ETL_json_postgresql_dag/etl_json_postgresql.py
+[2026-05-07T18:10:09.775+0000] {logging_mixin.py:190} INFO - [2026-05-07T18:10:09.774+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-07T18:10:10.095+0000] {logging_mixin.py:190} INFO - [2026-05-07T18:10:10.094+0000] {dag.py:4180} INFO - Setting next_dagrun for ETL_json_postgresql to 2026-05-07 00:00:00+00:00, run_after=2026-05-08 00:00:00+00:00
+[2026-05-07T18:10:10.365+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/ETL_json_postgresql_dag/etl_json_postgresql.py took 1.744 seconds
+[2026-05-07T18:16:14.777+0000] {processor.py:186} INFO - Started process (PID=155) to work on /opt/airflow/dags/ETL_json_postgresql_dag/etl_json_postgresql.py
+[2026-05-07T18:16:14.792+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/ETL_json_postgresql_dag/etl_json_postgresql.py for tasks to queue
+[2026-05-07T18:16:14.821+0000] {logging_mixin.py:190} INFO - [2026-05-07T18:16:14.819+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/ETL_json_postgresql_dag/etl_json_postgresql.py
+[2026-05-07T18:16:15.672+0000] {processor.py:925} INFO - DAG(s) 'ETL_json_postgresql' retrieved from /opt/airflow/dags/ETL_json_postgresql_dag/etl_json_postgresql.py
+[2026-05-07T18:16:16.185+0000] {logging_mixin.py:190} INFO - [2026-05-07T18:16:16.183+0000] {taskinstance.py:3315} ERROR - {'DAG Id': 'ETL_json_postgresql', 'Task Id': 'load_data_to_mysql', 'Run Id': 'scheduled__2026-03-22T00:00:00+00:00', 'Hostname': '11702db3a8b2', 'External Executor Id': '2d47f37f-fd06-418c-9a27-76a0c0336994'}
+[2026-05-07T18:16:16.683+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2026-05-07T18:16:16.687+0000] {logging_mixin.py:190} INFO - Task start:2026-05-07 18:12:05.400001+00:00 end:2026-05-07 18:16:16.279470+00:00 duration:250.879469
+[2026-05-07T18:16:16.696+0000] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): load_data_to_mysql> dag:<DAG: ETL_json_postgresql> dagrun:<DagRun ETL_json_postgresql @ 2026-03-22 00:00:00+00:00: scheduled__2026-03-22T00:00:00+00:00, state:running, queued_at: 2026-05-07 18:10:02.641068+00:00. externally triggered: False>
+[2026-05-07T18:16:16.700+0000] {logging_mixin.py:190} INFO - Failure caused by {'DAG Id': 'ETL_json_postgresql', 'Task Id': 'load_data_to_mysql', 'Run Id': 'scheduled__2026-03-22T00:00:00+00:00', 'Hostname': '11702db3a8b2', 'External Executor Id': '2d47f37f-fd06-418c-9a27-76a0c0336994'}
+[2026-05-07T18:16:16.713+0000] {logging_mixin.py:190} INFO - [2026-05-07T18:16:16.712+0000] {taskinstance.py:1226} INFO - Marking task as FAILED. dag_id=ETL_json_postgresql, task_id=load_data_to_mysql, run_id=scheduled__2026-03-22T00:00:00+00:00, execution_date=20260322T000000, start_date=20260507T181205, end_date=20260507T181616
+[2026-05-07T18:16:17.044+0000] {logging_mixin.py:190} INFO - [2026-05-07T18:16:17.043+0000] {processor.py:876} INFO - Executed callback for <TaskInstance: ETL_json_postgresql.load_data_to_mysql scheduled__2026-03-22T00:00:00+00:00 [failed]> in state failed
+[2026-05-07T18:16:17.135+0000] {logging_mixin.py:190} INFO - [2026-05-07T18:16:17.133+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-07T18:16:17.303+0000] {logging_mixin.py:190} INFO - [2026-05-07T18:16:17.300+0000] {dag.py:4180} INFO - Setting next_dagrun for ETL_json_postgresql to 2026-05-07 00:00:00+00:00, run_after=2026-05-08 00:00:00+00:00
+[2026-05-07T18:16:17.406+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/ETL_json_postgresql_dag/etl_json_postgresql.py took 2.749 seconds
+[2026-05-07T18:18:47.645+0000] {processor.py:186} INFO - Started process (PID=172) to work on /opt/airflow/dags/ETL_json_postgresql_dag/etl_json_postgresql.py
+[2026-05-07T18:18:47.649+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/ETL_json_postgresql_dag/etl_json_postgresql.py for tasks to queue
+[2026-05-07T18:18:47.661+0000] {logging_mixin.py:190} INFO - [2026-05-07T18:18:47.656+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/ETL_json_postgresql_dag/etl_json_postgresql.py
+[2026-05-07T18:18:47.931+0000] {processor.py:925} INFO - DAG(s) 'ETL_json_postgresql' retrieved from /opt/airflow/dags/ETL_json_postgresql_dag/etl_json_postgresql.py
+[2026-05-07T18:18:48.092+0000] {logging_mixin.py:190} INFO - [2026-05-07T18:18:48.091+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2026-05-07T18:18:48.372+0000] {logging_mixin.py:190} INFO - [2026-05-07T18:18:48.371+0000] {dag.py:4180} INFO - Setting next_dagrun for ETL_json_postgresql to 2026-05-07 00:00:00+00:00, run_after=2026-05-08 00:00:00+00:00
+[2026-05-07T18:18:48.501+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/ETL_json_postgresql_dag/etl_json_postgresql.py took 0.901 seconds

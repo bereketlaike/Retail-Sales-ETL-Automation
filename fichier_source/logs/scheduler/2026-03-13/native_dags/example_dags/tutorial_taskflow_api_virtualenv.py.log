@@ -1,0 +1,5 @@
+[2026-03-13T14:29:51.869+0000] {processor.py:186} INFO - Started process (PID=68) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_api_virtualenv.py
+[2026-03-13T14:29:51.876+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_api_virtualenv.py for tasks to queue
+[2026-03-13T14:29:51.893+0000] {logging_mixin.py:190} INFO - [2026-03-13T14:29:51.892+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_api_virtualenv.py
+[2026-03-13T14:29:52.003+0000] {processor.py:925} INFO - DAG(s) 'tutorial_taskflow_api_virtualenv' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_api_virtualenv.py
+[2026-03-13T14:29:54.316+0000] {logging_mixin.py:190} INFO - [2026-03-13T14:29:54.315+0000] {process_utils.py:266} INFO - Waiting up to 5 seconds for processes to exit...

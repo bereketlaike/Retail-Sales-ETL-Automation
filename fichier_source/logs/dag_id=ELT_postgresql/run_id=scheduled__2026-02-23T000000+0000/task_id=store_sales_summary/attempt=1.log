@@ -1,0 +1,121 @@
+[2026-03-09T11:39:42.090+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-09T11:39:42.212+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ELT_postgresql.store_sales_summary scheduled__2026-02-23T00:00:00+00:00 [queued]>
+[2026-03-09T11:39:42.259+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ELT_postgresql.store_sales_summary scheduled__2026-02-23T00:00:00+00:00 [queued]>
+[2026-03-09T11:39:42.265+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-03-09T11:39:42.350+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): store_sales_summary> on 2026-02-23 00:00:00+00:00
+[2026-03-09T11:39:42.384+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=81) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-03-09T11:39:42.406+0000] {standard_task_runner.py:72} INFO - Started process 108 to run task
+[2026-03-09T11:39:42.423+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ELT_postgresql', 'store_sales_summary', 'scheduled__2026-02-23T00:00:00+00:00', '--job-id', '133', '--raw', '--subdir', 'DAGS_FOLDER/ETL_postgresql_dag/etl_postgresql.py', '--cfg-path', '/tmp/tmpigr5g675']
+[2026-03-09T11:39:42.429+0000] {standard_task_runner.py:105} INFO - Job 133: Subtask store_sales_summary
+[2026-03-09T11:39:42.647+0000] {task_command.py:467} INFO - Running <TaskInstance: ELT_postgresql.store_sales_summary scheduled__2026-02-23T00:00:00+00:00 [running]> on host 0ea653c42ac5
+[2026-03-09T11:39:53.084+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bereket Tafesse' AIRFLOW_CTX_DAG_ID='ELT_postgresql' AIRFLOW_CTX_TASK_ID='store_sales_summary' AIRFLOW_CTX_EXECUTION_DATE='2026-02-23T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-02-23T00:00:00+00:00'
+[2026-03-09T11:39:53.089+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2026-03-09T11:39:53.091+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2026-03-09T11:39:53.093+0000] {logging_mixin.py:190} INFO - Current task name:store_sales_summary state:running start_date:2026-03-09 11:39:42.214786+00:00
+[2026-03-09T11:39:53.094+0000] {logging_mixin.py:190} INFO - Dag name:ELT_postgresql and current dag run status:running
+[2026-03-09T11:39:53.100+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-03-09T11:39:53.134+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-03-09T11:39:53.140+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'python /opt/***/dags/ETL_postgresql_dag/python_tasks/store_sales_summary.py']
+[2026-03-09T11:39:53.235+0000] {subprocess.py:99} INFO - Output:
+[2026-03-09T11:40:26.268+0000] {job.py:229} INFO - Heartbeat recovered after 34.48 seconds
+[2026-03-09T11:40:42.677+0000] {subprocess.py:106} INFO - [2026-03-09T11:40:42.668+0000] {base.py:84} INFO - Retrieving connection 'postgresql_connection'
+[2026-03-09T11:40:45.284+0000] {subprocess.py:106} INFO - Traceback (most recent call last):
+[2026-03-09T11:40:45.287+0000] {subprocess.py:106} INFO -   File "/opt/***/dags/ETL_postgresql_dag/python_tasks/store_sales_summary.py", line 23, in <module>
+[2026-03-09T11:40:45.299+0000] {subprocess.py:106} INFO -     staging_store_sales_summary()
+[2026-03-09T11:40:45.302+0000] {subprocess.py:106} INFO -   File "/opt/***/dags/ETL_postgresql_dag/python_tasks/store_sales_summary.py", line 6, in staging_store_sales_summary
+[2026-03-09T11:40:45.314+0000] {subprocess.py:106} INFO -     postgres_hook.run("""
+[2026-03-09T11:40:45.317+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/***/providers/common/sql/hooks/sql.py", line 463, in run
+[2026-03-09T11:40:45.319+0000] {subprocess.py:106} INFO -     with self._create_autocommit_connection(autocommit) as conn:
+[2026-03-09T11:40:45.322+0000] {subprocess.py:106} INFO -          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-03-09T11:40:45.328+0000] {subprocess.py:106} INFO -   File "/usr/local/lib/python3.12/contextlib.py", line 137, in __enter__
+[2026-03-09T11:40:45.331+0000] {subprocess.py:106} INFO -     return next(self.gen)
+[2026-03-09T11:40:45.333+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^
+[2026-03-09T11:40:45.335+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/***/providers/common/sql/hooks/sql.py", line 576, in _create_autocommit_connection
+[2026-03-09T11:40:45.339+0000] {subprocess.py:106} INFO -     with closing(self.get_conn()) as conn:
+[2026-03-09T11:40:45.341+0000] {subprocess.py:106} INFO -                  ^^^^^^^^^^^^^^^
+[2026-03-09T11:40:45.343+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/***/providers/postgres/hooks/postgres.py", line 165, in get_conn
+[2026-03-09T11:40:45.346+0000] {subprocess.py:106} INFO -     self.conn = psycopg2.connect(**conn_args)
+[2026-03-09T11:40:45.349+0000] {subprocess.py:106} INFO -                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-03-09T11:40:45.351+0000] {subprocess.py:106} INFO -   File "/home/***/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+[2026-03-09T11:40:45.354+0000] {subprocess.py:106} INFO -     conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+[2026-03-09T11:40:45.356+0000] {subprocess.py:106} INFO -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2026-03-09T11:40:45.358+0000] {subprocess.py:106} INFO - psycopg2.OperationalError: could not translate host name "fichier_source-postgres_destination_server-1" to address: Name or service not known
+[2026-03-09T11:40:45.361+0000] {subprocess.py:106} INFO - 
+[2026-03-09T11:40:46.490+0000] {subprocess.py:110} INFO - Command exited with return code 1
+[2026-03-09T11:40:46.554+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-03-09T11:40:46.590+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2026-03-09T11:40:46.593+0000] {logging_mixin.py:190} INFO - Task start:2026-03-09 11:39:42.214786+00:00 end:2026-03-09 11:40:46.585585+00:00 duration:64.370799
+[2026-03-09T11:40:46.597+0000] {logging_mixin.py:190} INFO - Task:<Task(BashOperator): store_sales_summary> dag:<DAG: ELT_postgresql> dagrun:<DagRun ELT_postgresql @ 2026-02-23 00:00:00+00:00: scheduled__2026-02-23T00:00:00+00:00, state:running, queued_at: 2026-03-09 11:39:11.095935+00:00. externally triggered: False>
+[2026-03-09T11:40:46.600+0000] {logging_mixin.py:190} INFO - Failure caused by Bash command failed. The command returned a non-zero exit code 1.
+[2026-03-09T11:40:46.603+0000] {taskinstance.py:1226} INFO - Marking task as FAILED. dag_id=ELT_postgresql, task_id=store_sales_summary, run_id=scheduled__2026-02-23T00:00:00+00:00, execution_date=20260223T000000, start_date=20260309T113942, end_date=20260309T114046
+[2026-03-09T11:40:46.761+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-03-09T11:40:46.765+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 133 for task store_sales_summary (Bash command failed. The command returned a non-zero exit code 1.; 108)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-03-09T11:40:46.872+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2026-03-09T11:40:47.584+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-09T11:40:47.594+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,30 @@
+[2026-03-22T00:01:10.446+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-03-22T00:01:10.644+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: ETL_json_postgresql.load_data_to_mysql scheduled__2026-03-21T00:00:00+00:00 [queued]>
+[2026-03-22T00:01:11.899+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: ETL_json_postgresql.load_data_to_mysql scheduled__2026-03-21T00:00:00+00:00 [queued]>
+[2026-03-22T00:01:11.904+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-03-22T00:01:12.246+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): load_data_to_mysql> on 2026-03-21 00:00:00+00:00
+[2026-03-22T00:01:12.465+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=21372) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2026-03-22T00:01:12.489+0000] {standard_task_runner.py:72} INFO - Started process 21399 to run task
+[2026-03-22T00:01:12.543+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'ETL_json_postgresql', 'load_data_to_mysql', 'scheduled__2026-03-21T00:00:00+00:00', '--job-id', '182', '--raw', '--subdir', 'DAGS_FOLDER/ETL_json_postgresql_dag/etl_json_postgresql.py', '--cfg-path', '/tmp/tmplgm3zuxv']
+[2026-03-22T00:01:12.561+0000] {standard_task_runner.py:105} INFO - Job 182: Subtask load_data_to_mysql
+[2026-03-22T00:01:13.988+0000] {task_command.py:467} INFO - Running <TaskInstance: ETL_json_postgresql.load_data_to_mysql scheduled__2026-03-21T00:00:00+00:00 [running]> on host 11702db3a8b2
+[2026-03-22T00:01:15.792+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Bereket Tafesse' AIRFLOW_CTX_DAG_ID='ETL_json_postgresql' AIRFLOW_CTX_TASK_ID='load_data_to_mysql' AIRFLOW_CTX_EXECUTION_DATE='2026-03-21T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-21T00:00:00+00:00'
+[2026-03-22T00:01:15.798+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2026-03-22T00:01:15.814+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2026-03-22T00:01:15.818+0000] {logging_mixin.py:190} INFO - Current task name:load_data_to_mysql state:running start_date:2026-03-22 00:01:10.651020+00:00
+[2026-03-22T00:01:15.822+0000] {logging_mixin.py:190} INFO - Dag name:ETL_json_postgresql and current dag run status:running
+[2026-03-22T00:01:15.826+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-03-22T00:01:58.437+0000] {job.py:229} INFO - Heartbeat recovered after 23.20 seconds
+[2026-03-22T00:04:22.906+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-03-22T00:04:24.685+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-03-22T00:04:24.731+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=ETL_json_postgresql, task_id=load_data_to_mysql, run_id=scheduled__2026-03-21T00:00:00+00:00, execution_date=20260321T000000, start_date=20260322T000110, end_date=20260322T000424
+[2026-03-22T00:04:26.411+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2026-03-22T00:04:26.426+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2026-03-22T00:04:26.433+0000] {logging_mixin.py:190} INFO - Dag name:ETL_json_postgresql queued_at:2026-03-22 00:00:16.193477+00:00
+[2026-03-22T00:04:26.448+0000] {logging_mixin.py:190} INFO - Task hostname:11702db3a8b2 operator:PythonOperator
+[2026-03-22T00:04:27.691+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-03-22T00:04:29.924+0000] {standard_task_runner.py:217} INFO - Process not found (most likely exited), stop collecting metrics
+[2026-03-22T00:04:30.673+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-22T00:04:30.743+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
